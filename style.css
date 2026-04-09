@@ -1,1 +1,99 @@
+/* Reset e Variáveis */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+:root {
+    --primary: #2d5a27;
+    --secondary: #8db600;
+    --dark: #1b3318;
+    --light: #f4f9f2;
+}
+
+html { scroll-behavior: smooth; }
+
+body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Header e Nav */
+header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+.logo span { color: var(--secondary); }
+
+.nav-links { display: flex; list-style: none; }
+.nav-links li { margin-left: 30px; }
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--dark); 
+    font-weight: 500;
+    transition: 0.3s;
+}
+.nav-links a:hover { color: var(--secondary); }
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80') center/cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding-top: 80px;
+}
+
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; }
+.btn {
+    display: inline-block;
+    background: var(--secondary);
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: transform 0.3s;
+}
+.btn:hover { transform: scale(1.05); }
+
+/* Seções e Grid */
+.section { padding: 80px 0; text-align: center; }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-bottom: 4px solid var(--primary);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Oculta menu comum no mobile */
+    .hero-content h1 { font-size: 2.5rem; }
+}
+
+footer { background: var(--dark); color: white; text-align: center; padding: 20px 0; }
