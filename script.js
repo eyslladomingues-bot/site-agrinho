@@ -1,26 +1,50 @@
-
-// Efeito de mudança no cabeçalho ao rolar a página
-window.addEventListener('scroll', function() {
+// 1. Mudança de estilo do Header ao rolar
+window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.style.padding = '10px 0';
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-    } else {
-        header.style.padding = '0';
-        header.style.backgroundColor = '#fff';
-    }
+    header.classList.toggle('scrolled', window.scrollY > 100);
 });
 
-// Mensagem de boas-vindas no console para confirmar carregamento
-console.log("AgroForte: Sustentabilidade e Tecnologia carregados com sucesso.");
+// 2. Contador Animado para Estatísticas
+const counters = document.querySelectorAll('.counter');
+const speed = 200;
 
-// Exemplo simples de interação nos cards
-const cards = document.querySelectorAll('.card');
-cards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.backgroundColor = '#f0f7ee';
+const startCounters = () => {
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const inc = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(updateCount, 1);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        updateCount();
     });
-    card.addEventListener('mouseleave', () => {
-        card.style.backgroundColor = 'white';
+};
+
+// 3. Observer para disparar animações quando visível
+const observerOptions = { threshold: 0.5 };
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            if (entry.target.classList.contains('stats')) {
+                startCounters();
+            }
+            entry.target.classList.add('active');
+        }
     });
+}, observerOptions);
+
+document.querySelectorAll('.reveal, .stats').forEach(el => observer.observe(el));
+
+// 4. Lógica simples do formulário
+document.getElementById('news-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Obrigado por se inscrever! Você receberá nossas atualizações em breve.');
+    e.target.reset();
 });
