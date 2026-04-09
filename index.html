@@ -3,56 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroForte - Futuro Sustentável</title>
+    <title>AgroForte | Tecnologia & Sustentabilidade</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header id="header">
         <nav class="container">
-            <div class="logo">Agro<span>Forte</span></div>
+            <div class="logo">AGRO<span>FORTE</span></div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Equilíbrio</a></li>
-                <li><a href="#tecnologia">Tecnologia</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#pilares">Pilares</a></li>
+                <li><a href="#tecnologia">Inovação</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
             </ul>
-            <div class="menu-toggle" id="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button class="btn-contato">Fale Conosco</button>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content container">
-            <h1>Futuro Sustentável</h1>
-            <p>O equilíbrio perfeito entre a alta produtividade e a preservação do meio ambiente.</p>
-            <a href="#sobre" class="btn">Saiba Mais</a>
-        </div>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content container">
+                <span class="tag">Agricultura 4.0</span>
+                <h1>O Equilíbrio que Alimenta o Mundo</h1>
+                <p>Integrando inteligência artificial e biotecnologia para uma produção que respeita os limites do planeta.</p>
+                <div class="hero-btns">
+                    <a href="#tecnologia" class="btn-primary">Ver Tecnologias</a>
+                    <a href="#pilares" class="btn-secondary">Nossos Pilares</a>
+                </div>
+            </div>
+        </section>
 
-    <section id="sobre" class="container section">
-        <h2>Produção em Harmonia</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Preservação</h3>
-                <p>Implementação de corredores ecológicos e proteção de nascentes dentro das áreas produtivas.</p>
+        <section class="stats container">
+            <div class="stat-item">
+                <h2 class="counter" data-target="30">0</h2><span>%</span>
+                <p>Menos desperdício de água</p>
             </div>
-            <div class="card">
-                <h3>Eficiência</h3>
-                <p>Uso racional de recursos hídricos e insumos através de monitoramento de precisão.</p>
+            <div class="stat-item">
+                <h2 class="counter" data-target="15">0</h2><span>%</span>
+                <p>Aumento na produtividade</p>
             </div>
-            <div class="card">
-                <h3>Renovação</h3>
-                <p>Foco em solos saudáveis através da rotação de culturas e plantio direto.</p>
+            <div class="stat-item">
+                <h2 class="counter" data-target="100">0</h2><span>+</span>
+                <p>Fazendas Conectadas</p>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="pilares" class="section container">
+            <div class="section-header">
+                <h2>Produção Consciente</h2>
+                <p>Como unimos o campo à preservação ambiental.</p>
+            </div>
+            <div class="grid">
+                <div class="card reveal">
+                    <div class="icon">🌱</div>
+                    <h3>Bioinsumos</h3>
+                    <p>Substituição de defensivos químicos por soluções biológicas que regeneram o ecossistema.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="icon">🛰️</div>
+                    <h3>Monitoramento</h3>
+                    <p>Satélites e drones garantem que cada gota de água e grama de fertilizante seja usada onde é necessário.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="icon">♻️</div>
+                    <h3>Carbono Zero</h3>
+                    <p>Programas de sequestro de carbono para neutralizar a pegada ecológica da produção agrícola.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter" class="newsletter">
+            <div class="container">
+                <h2>Receba atualizações do campo</h2>
+                <form id="news-form">
+                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit">Inscrever-誠</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 AgroForte - Cultivando o Amanhã.</p>
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <div class="logo">AGRO<span>FORTE</span></div>
+                <p>Liderando a transição para um agronegócio inteligente e regenerativo.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Links Úteis</h4>
+                <ul>
+                    <li><a href="#">Relatório ESG</a></li>
+                    <li><a href="#">Carreiras</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AgroForte - Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
